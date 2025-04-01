@@ -1,0 +1,211 @@
+/* Variables de color para una fácil gestión */
+:root {
+    --azul-principal: #3498db;   /* Azul Principal */
+    --naranja: #e67e22;          /* Naranja */
+    --gris-claro: #ecf0f1;        /* Gris Claro */
+    --gris-oscuro: #333333;       /* Gris Oscuro */
+    --blanco: #ffffff;           /* Blanco */
+    --rojo: #e74c3c;             /* Rojo para alertas */
+}
+
+/* Estilos generales para el sitio */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal del producto */
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 18px; /* Reducir padding */
+    background-color: var(--blanco);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reducir bordes */
+    margin-top: 35px;   /* Reducir margen superior */
+    margin-bottom: 35px; /* Reducir margen inferior */
+    transition: all 0.3s ease;
+}
+
+.product-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+    transform: translateY(-5px);  /* Efecto de levitación */
+}
+
+/* Estilo para la imagen del producto */
+.product-image {
+    width: 100%;
+    max-width: 280px; /* Reducir tamaño máximo de la imagen */
+    margin-right: 18px; /* Reducir espacio entre imagen y detalles */
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Reducir bordes de imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom suave y sombra más pronunciada al pasar el mouse */
+.product-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de detalles del producto */
+.product-details {
+    max-width: 460px; /* Reducir el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    padding: 14px; /* Reducir padding */
+}
+
+/* Título del producto */
+.product-details h1 {
+    font-size: 2em; /* Reducir tamaño de fuente */
+    color: var(--gris-oscuro);
+    margin-bottom: 8px; /* Reducir margen inferior */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.product-details h1:hover {
+    color: var(--azul-principal); /* Cambio de color al pasar el mouse */
+}
+
+/* Descripción del producto */
+.product-description {
+    font-size: 1.05em; /* Reducir tamaño de fuente */
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 12px; /* Reducir margen inferior */
+    transition: color 0.3s ease;
+}
+
+.product-description:hover {
+    color: var(--gris-oscuro); /* Cambio de color al pasar el mouse */
+}
+
+/* Estilo para el precio */
+.product-price {
+    font-size: 1.4em; /* Reducir tamaño de fuente */
+    color: var(--naranja);
+    font-weight: bold;
+    margin-top: 12px; /* Reducir margen superior */
+    transition: color 0.3s ease;
+}
+
+.product-price:hover {
+    color: var(--azul-principal); /* Cambio de color al pasar el mouse */
+}
+
+/* Estilo para los detalles adicionales */
+.product-info {
+    font-size: 0.95em; /* Reducir tamaño de fuente */
+    color: var(--gris-oscuro);
+    margin-top: 8px; /* Reducir margen superior */
+    transition: color 0.3s ease;
+}
+
+/* Resaltar la categoría, marca y modelo */
+.product-info strong {
+    font-weight: bold;
+    color: var(--gris-oscuro); /* Mantener el color oscuro en estado normal */
+}
+
+/* Añadimos un fondo sutil y bordes */
+.product-info p {
+    margin-bottom: 6px; /* Reducir margen inferior */
+    background-color: var(--gris-claro); /* Fondo sutil */
+    padding: 6px; /* Reducir padding */
+    border-radius: 5px; /* Redondear bordes */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-info p:hover {
+    background-color: var(--azul-principal); /* Fondo azul en hover */
+    color: var(--blanco);  /* Texto blanco al pasar el mouse */
+}
+
+/* Estilo para los botones de acción */
+.actions {
+    margin-top: 18px; /* Reducir margen superior */
+}
+
+.buy-button,
+.back-button {
+    display: inline-block;
+    padding: 9px 16px; /* Reducir padding */
+    font-size: 1em; /* Reducir tamaño de fuente */
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 7px; /* Reducir margen */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Botón de compra */
+.buy-button {
+    background-color: var(--azul-principal);
+    color: var(--blanco);
+    border: 2px solid var(--azul-principal);
+}
+
+.buy-button:hover {
+    background-color: var(--naranja);
+    border: 2px solid var(--naranja);
+    color: var(--blanco);
+    transform: translateY(-3px);  /* Efecto de levitación */
+}
+
+/* Botón de retroceder */
+.back-button {
+    background-color: var(--blanco);
+    color: var(--azul-principal);
+    border: 2px solid var(--azul-principal);
+}
+
+.back-button:hover {
+    background-color: var(--azul-principal);
+    color: var(--blanco);
+    transform: translateY(-3px);  /* Efecto de levitación */
+}
+
+/* Estilo para los enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--naranja);
+}
+
+/* Estilo para las alertas o mensajes */
+.alerta {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    padding: 7px; /* Reducir padding */
+    border-radius: 5px; /* Redondear bordes */
+    font-size: 1em; /* Reducir tamaño de fuente */
+    margin-bottom: 12px; /* Reducir margen inferior */
+    transition: background-color 0.3s ease;
+}
+
+.alerta-success {
+    background-color: #2ecc71;
+}
+
+/* Agregar transición suave a todos los elementos */
+* {
+    transition: all 0.3s ease-in-out;
+}
