@@ -91,7 +91,6 @@ def obtener_carrito(request):
    
 
     carrito_productos = CarritoProducto.objects.filter(carrito=carrito)
-    serializer = CarritoProductoSerializer(carrito_productos, many=True)
     productos_carrito_en_carrito = []
 
     for item in carrito_productos:  

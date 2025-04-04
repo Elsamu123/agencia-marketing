@@ -14,11 +14,11 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.select_related('categoria').all() 
     serializer_class = ProductoSerializer  # Clase que define cómo serializar los productos
     lookup_field = 'slug' 
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_permissions(self):
         if self.action in ['update', 'partial_update', 'destroy']:  # Solo para acciones de modificación
-            self.permission_classes = [AllowAny]  # Permiso personalizado que verifica si el usuario es el propietario
+            self.permission_classes = [IsProductOwner]  # Permiso personalizado que verifica si el usuario es el propietario
         return super().get_permissions()
     
     def perform_create(self, serializer):
@@ -64,6 +64,7 @@ class ComentarioViewSet(viewsets.ModelViewSet):
     queryset = Comentario.objects.all()  # Queryset que devuelve todos los comentarios
     serializer_class = ComentarioSerializer  # Clase que define cómo serializar los comentarios
     permission_classes = [IsAuthenticatedOrReadOnly]
+
 
 class ProductoSearchView(APIView):
     permission_classes = [AllowAny]

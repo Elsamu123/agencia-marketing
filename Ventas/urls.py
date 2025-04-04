@@ -15,6 +15,6 @@ urlpatterns = [
     path('carrito/eliminar/', eliminar_producto_carrito, name='eliminar_producto_carrito'),
     path('carrito/', obtener_carrito, name='obtener_carrito'),
     path('carrito/vaciar', VaciarCarritoView.as_view(), name='vaciar_carrito'),
-    path('carrito/comprar', RealizarCompraView.as_view(), name='obtener_carrito'),
+    path('carrito/comprar', RealizarCompraView.as_view(), name='obtener_comprar'),
 ]
 urlpatterns += router.urls
